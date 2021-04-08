@@ -125,6 +125,7 @@ public class Controller {
 
     }
 
+
     public void tryToAuth(ActionEvent actionEvent) {
         if (socket == null || socket.isClosed()){
         connect();

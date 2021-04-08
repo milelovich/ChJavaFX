@@ -12,7 +12,6 @@ public class ClientHandler {
     private DataOutputStream out;
     private String nickname;
 
-
     public ClientHandler(ConsoleServer server, Socket socket) {
         try {
             this.server = server;

@@ -18,6 +18,7 @@ public class AuthService {
         }
     }
 
+
     public static String getNicknameByLoginAndPassword(String login, String password) {
         //формируем запрос:
         String query = String.format("select nickname from users where login='%s' and password='%s'", login, password);
