@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet /style /style.css?>
+
+<VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <stylesheets><URL value="@/style/style.css" />></stylesheets>
+   <children>
+      <HBox fx:id="upperPanel" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="loginField" prefHeight="33.0" prefWidth="165.0" promptText="login">
+               <font>
+                  <Font size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="11.0" />
+               </HBox.margin>
+            </TextField>
+            <PasswordField fx:id="passwordField" onAction="#tryToAuth" prefHeight="33.0" prefWidth="146.0" promptText="password">
+               <font>
+                  <Font size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="11.0" />
+               </HBox.margin>
+            </PasswordField>
+            <Button mnemonicParsing="false" onAction="#tryToAuth" prefHeight="33.0" prefWidth="113.0" text="Sign in">
+               <font>
+                  <Font size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="11.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      
+
+      <TextArea fx:id="textArea" prefHeight="274.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
+      <HBox fx:id="bottomBox" alignment="BOTTOM_CENTER" managed="false" prefHeight="94.0" prefWidth="600.0" visible="false">
+         <children>
+            <TextField fx:id="textField" onAction="#sendMsg" prefHeight="49.0" prefWidth="373.0" promptText="Enter message..." HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="btn" mnemonicParsing="false" onAction="#sendMsg" prefHeight="49.0" prefWidth="95.0" text="Send">
+               <HBox.margin>
+                  <Insets bottom="22.0" right="22.0" top="22.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

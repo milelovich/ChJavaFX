@@ -1,0 +1,21 @@
+#btn {
+-fx-background-color: black;
+-fx-border-color: black;
+-fx-text-fill: white;
+-fx-border-style: solid;
+}
+
+#btn:hover {
+-fx-background-color: turquoise;
+-fx-border-color: black;
+-fx-text-fill: black;
+-fx-border-style: solid;
+}
+
+#bottomBox {
+-fx-background-color: grey;
+}
+
+#upperPanel {
+-fx-background-color: black;
+}
