@@ -23,12 +23,12 @@ public class ConsoleServer {
             System.out.println("Server started");
 //            System.out.println("result from db " + AuthService.getNicknameByLoginAndPassword("login1", "pass1"));
 
-        while (true){
-            socket = server.accept();
-            System.out.printf("Client [%s] connected\n", socket.getInetAddress());
-            new ClientHandler(this, socket);
+            while (true){
+                socket = server.accept();
+                System.out.printf("Client [%s] connected\n", socket.getInetAddress());
+                new ClientHandler(this, socket);
 //            subscribe(new ClientHandler(this, socket));
-        }
+            }
 
         } catch (IOException e){
             e.printStackTrace();
@@ -49,7 +49,7 @@ public class ConsoleServer {
 
     //метод для добавления пользователей
     public void subscribe(ClientHandler client){
-    users.add(client);
+        users.add(client);
     }
 
     //метод для удаления пользователей
@@ -63,11 +63,11 @@ public class ConsoleServer {
         }
     }
     public boolean isNickBusy(String nick){
-for (ClientHandler c : users){
-    if (c.getNickname().equals(nick)){
-        return true;
-    }
-} return false;
+        for (ClientHandler c : users){
+            if (c.getNickname().equals(nick)){
+                return true;
+            }
+        } return false;
 
     }
 
@@ -75,8 +75,8 @@ for (ClientHandler c : users){
         for (ClientHandler c : users){
             if (c.getNickname().equals(nickTo)){
                 if (!nickFrom.getNickname().equals(nickTo)){
-                c.sendMsg(nickFrom.getNickname() + "[send for " + nickTo + "] " + msg);
-                nickFrom.sendMsg(nickFrom.getNickname() + "[send for " + nickTo + "] " + msg);
+                    c.sendMsg(nickFrom.getNickname() + "[send for " + nickTo + "] " + msg);
+                    nickFrom.sendMsg(nickFrom.getNickname() + "[send for " + nickTo + "] " + msg);
                 }
             }
         }
